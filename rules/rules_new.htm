@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<title>MSPL Rulebook</title>
+
+	<!-- Meta Tags -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="accordion, javascript accordion, scriptaculous" />
+	<meta name="description" content="The ultimate modal window system, LightWindow, allows you to build your own theem, create mixed media galleries including flash, quictkime and images.   Through a variety of parameters this system can do it all and recreate any other system out there!" />
+
+	<meta name="robots" content="index, follow" />
+
+	<!-- JavaScript -->
+  <!-- <script type="text/javascript" src="combine.php?type=javascript&files=prototype.js,effects.js,accordion.js,code_highlighter.js,javascript.js,html.js"></script> -->
+
+	<script type="text/javascript" src="javascript/prototype.js"></script>
+	<script type="text/javascript" src="javascript/effects.js"></script>
+	<script type="text/javascript" src="javascript/accordion.js"></script>
+	<script type="text/javascript" src="javascript/code_highlighter.js"></script>
+	<script type="text/javascript" src="javascript/javascript.js"></script>
+	<script type="text/javascript" src="javascript/html.js"></script>
+
+	<!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/default.css" />
+
+	<script type="text/javascript">
+
+		//
+		//  In my case I want to load them onload, this is how you do it!
+		//
+		Event.observe(window, 'load', loadAccordions, false);
+
+		//
+		//	Set up all accordions
+		//
+		function loadAccordions() {
+			var topAccordion = new accordion('horizontal_container', {
+				classNames : {
+					toggle : 'horizontal_accordion_toggle',
+					toggleActive : 'horizontal_accordion_toggle_active',
+					content : 'horizontal_accordion_content'
+				},
+				defaultSize : {
+					width : 525
+				},
+				direction : 'horizontal'
+			});
+
+			var bottomAccordion = new accordion('vertical_container');
+
+			var nestedVerticalAccordion = new accordion('vertical_nested_container', {
+			  classNames : {
+					toggle : 'vertical_accordion_toggle',
+					toggleActive : 'vertical_accordion_toggle_active',
+					content : 'vertical_accordion_content'
+				}
+			});
+
+			// Open first one
+			bottomAccordion.activate($$('#vertical_container .accordion_toggle')[0]);
+
+			// Open second one
+			topAccordion.activate($$('#horizontal_container .horizontal_accordion_toggle')[2]);
+		}
+
+	</script>
+
+	<!-- CSS -->
+	<style type="text/css" >
+
+		/*
+			Vertical Accordions
+		*/
+
+		.accordion_toggle {
+			display: block;
+			height: 30px;
+			width: 680px;
+			background: url(images/accordion_toggle.jpg) no-repeat top right #000000;
+			padding: 0 10px 0 10px;
+			line-height: 30px;
+			color: #ffffff;
+			font-weight: normal;
+			font-family: Calibri, Arial, sans-serif;
+			text-decoration: none;
+			outline: none;
+			font-size: 20px;
+			color: #ffffff;
+			border-bottom: 1px solid #990000;
+			cursor: pointer;
+			margin: 0 0 0 0;
+		}
+
+		.accordion_toggle_active {
+			background: url(images/accordion_toggle_active.jpg) no-repeat top right #990000;
+			color: #ffffff;
+			border-bottom: 1px solid #000000;
+		}
+
+		.accordion_content {
+			background-color: #ffffff;
+			font-family: Calibri, Arial, sans-serif;
+			font-size: 12px;
+			color: #000000;
+			overflow: hidden;
+		}
+
+			.accordion_content h2 {
+				margin: 15px 0 5px 10px;
+				color: #000000;
+			}
+
+			.accordion_content p {
+				line-height: 150%;
+				padding: 5px 10px 15px 10px;
+			}
+
+		.vertical_accordion_toggle {
+			display: block;
+			height: 30px;
+			width: 600px;
+			background: url(images/accordion_toggle.jpg) no-repeat top right #000000;
+			padding: 0 10px 0 10px;
+			line-height: 30px;
+			color: #ffffff;
+			font-weight: normal;
+			text-decoration: none;
+			outline: none;
+			font-size: 16px;
+			color: #ffffff;
+			border-bottom: 1px solid #990000;
+			cursor: pointer;
+			margin: 0 0 0 0;
+		}
+
+		.vertical_accordion_toggle_active {
+			background: url(images/accordion_toggle_active.jpg) no-repeat top right #990000;
+			color: #ffffff;
+			border-bottom: 1px solid #000000;
+		}
+
+		.vertical_accordion_content {
+			background-color: #ffffff;
+			color: #000000;
+			overflow: hidden;
+		}
+
+			.vertical_accordion_content h2 {
+				margin: 15px 0 5px 10px;
+				color: #000000;
+			}
+
+			.vertical_accordion_content p {
+				line-height: 150%;
+				padding: 5px 10px 15px 10px;
+			}
+
+		/*
+			Horizontal Accordion
+		*/
+
+		.horizontal_accordion_toggle {
+			/* REQUIRED */
+			float: left;	/* This make sure it stays horizontal */
+			/* REQUIRED */
+
+			display: block;
+			height: 30px;
+			width: 30px;
+			background: url(images/h_accordion_toggle.jpg) no-repeat top left #000000;
+			color: #ffffff;
+			text-decoration: none;
+			outline: none;
+			border-right: 1px solid #990000;
+			cursor: pointer;
+			margin: 0 0 0 0;
+		}
+
+		.horizontal_accordion_toggle_active {
+			background: url(images/h_accordion_toggle_active.jpg) no-repeat top left #990000;
+			border-right: 1px solid #000000;
+		}
+
+		.horizontal_accordion_content {
+			/* REQUIRED */
+			height: 30px;	/* We need to define a height for the accordion as it stretches the width */
+			float: left;	/* This make sure it stays horizontal */
+			/* REQUIRED */
+
+			overflow: hidden;
+			background-color: #ffffff;
+			color: #444444;
+		}
+
+			.horizontal_accordion_content p {
+				width: 450px;
+				line-height: 150%;
+				padding: 5px 10px 15px 10px;
+			}
+
+
+    /* Container styling*/
+    #horizontal_container {
+      margin: 20px auto 20px auto;
+      width: 680px;
+      height: 30px;
+    }
+
+    #vertical_nested_container {
+      margin: 20px auto 20px auto;
+      width: 620px;
+    }
+
+	.style1 {color: #00FF00}
+.style3 {color: #0000FF}
+    .style4 {color: #FF0000}
+    </style>
+
+
+</head>
+
+<body>
+<table>
+<h1>MSPL Rulebook</h1>
+<tr><td width="680">
+<div id="container">
+	<div id="vertical_container" >
+
+		<h1 class="accordion_toggle">Introduction</h1>
+			<div class="accordion_content">
+		        <p> Welcome to our league. <s>Your presence in our league means that you agree to abide by our rules and procedures.</s> <span class="style1">By participating in a tournament, you agree to abide by the rules and behave in a courteous manner</span>. By taking a seat <s>in</s> <span class="style1">at</span> one of our <s>card games</s> <span class="style1">tables</span>, you are accepting our league management to be the final authority on all matters relating to that game.  <span class="style1">A violator may be verbally warned, suspended from play for a specified length of time, or disqualified from the tournament. Chips from a disqualified participant will be removed from play.</span> <span class="style3">(Moved from Section 10 - Tournaments, Rule 1)</span></p>
+                <p>The main purpose of this ruleset is to guide the play of games within our league. Although the best efforts will be made to maintain this ruleset, it is worth noting again that league management has the final authority on all matters regarding the league, including the games played within the league.</p>
+                <p>This ruleset is a modified version of "Robert's Rules of Poker". “Robert’s Rules Of Poker” is authored by Robert Ciaffone, better known in the poker world as Bob Ciaffone, a leading authority on cardroom rules. For more information about the original version of "Robert's Rules of Poker" or Bob Ciaffone, click on the black box below.</p>
+	            <div id="horizontal_container" >
+    	            <h3 class="horizontal_accordion_toggle"></h3>
+		                <div class="horizontal_accordion_content">Website: http://www.pokercoach.us/
+                        </div>
+	            </div>
+		  </div>
+
+	   	<h1 class="accordion_toggle">Section 1 - Proper Behavior</h1>
+			<div class="accordion_content">
+                <div id="vertical_nested_container" >
+                        <h3 class="vertical_accordion_toggle">Conduct Code</h3>
+                            <div class="vertical_accordion_content"> The league management will attempt to maintain a pleasant environment for all our paticipants, but is not responsible for the conduct of any player. We have established a code of conduct, and may deny <s>the use of our cardroom</s> <span class="style1">participation in league functions </span>to violators. The following are not permitted:
+                                <ol>
+                                    <li>Collusion with another player or any other form of cheating.</li>
+                                    <li>Verbally or physically threatening any participant.</li>
+                                    <li>Using excessive profanity or obscene language.</li>
+                                    <li>Creating a disturbance by arguing, shouting, or making excessive noise.</li>
+                                    <li>Throwing, tearing, bending, or crumpling cards.</li>
+                                    <li>Destroying or defacing property.</li>
+                                    <li>Using an illegal substance.</li>
+                                    <li>Carrying a weapon.</li>
+                                    <li><s>Smoking</s> <span class="style1">Tobacco use of any kind</span>  <s>is not allowed </s>within the building. <span class="style3">(Rule moved from &quot;Tobacco Use&quot; subsection and &quot;Tobacco Use&quot; subsection was deleted)</span></li>
+                                </ol>
+                  </div>
+                  <h3 class="vertical_accordion_toggle">Poker Etiquette</h3>
+                  <div class="vertical_accordion_content"> The following actions are improper, and grounds for warning, suspending, or barring a violator:
+                                <ol>
+                                    <li>Deliberately acting out of turn.</li>
+                                    <li>Deliberately splashing chips into the pot.</li>
+                                    <li>Agreeing to check a hand out when a third player is all-in.</li>
+                                    <li>Reading a hand for another player at the showdown before it has been placed faceup on the table.</li>
+                                    <li>Telling anyone to turn a hand faceup at the showdown.</li>
+                                    <li>Revealing the contents of a live hand in a multihanded pot before the betting is complete. Revealing the contents of a folded hand before the betting is complete. Do not divulge the contents of a hand during a deal even to someone not in the pot, so you do not leave any possibility of the information being transmitted to an active player.</li>
+                                    <li class="style1">Players, whether in the hand or not, may not discuss the hands until the action is complete. Players are obligated to protect the other players in the tournament at all times. Discussing cards discarded or hand possibilities is not allowed. <span class="style3">(Moved from Section 10 - Tournaments, Rule 1)</span></li>
+                                    <li>Needlessly stalling the action of a game.</li>
+                                    <li>Deliberately discarding hands away from the muck. Cards should be released in a low line of flight, at a moderate rate of speed (not at the dealer's hands or chip-rack).</li>
+                                    <li>Stacking chips in a manner that interferes with dealing or viewing cards.</li>
+                                    <li>Making statements or taking action that could unfairly influence the course of play, whether or not the offender is involved in the pot.</li>
+                                    <li>Using a cell phone at the table. </li>
+                                </ol>
+                  </div>
+              </div>
+ 		  	</div>
+
+		<h1 class="accordion_toggle">Section 2 - League Policies</h1>
+			<div class="accordion_content">
+                <div id="vertical_nested_container" >
+                        <h3 class="vertical_accordion_toggle">Decision-Making</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li class="style4"> League management shall be defined as...</li>
+                                  	<li>The league management reserves the right to make decisions in the spirit of fairness, even if a strict interpretation of the rules may indicate a different ruling. </li>
+                                  	<li> Decisions of the league management are final. Although the dealer may be the first person to rule on an issue at a table, a tournament director may overrule the dealer.</li><li> The proper time to draw attention to an error or irregularity is when it occurs or is first noticed. Any delay may affect the ruling. </li>
+                                    <li> If an incorrect rule interpretation or decision by the league management or any dealer is made in good faith, the league has no liability. </li>
+                                    <li> A ruling may be made regarding a pot if it has been requested before the next deal starts. Otherwise, the result of a deal must stand. The first riffle of the shuffle marks the start for a deal. </li>
+                                    <li> If a pot has been incorrectly awarded and mingled with chips that were not in the pot, and the time limit for a ruling request given in the previous rule has been observed, the league management may determine how much was in the pot by reconstructing the betting, and then transfer that amount to the proper player. </li>
+                                    <li> The same action may have a different meaning, depending on who does it, so the possible intent of an offender will be taken into consideration. Some factors here are the person&rsquo;s amount of poker experience and past record. </li>
+                                </ol>
+                  </div>
+                        <h3 class="vertical_accordion_toggle">Dealers / Dealing</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> <span class="style1">Dealers for this league are appointed by league management.  League management also retains the right to remove this appointment at any time.
+                                    </span>
+                                	<li><span class="style1"> Dealers that are playing at the same time they are dealing have the same rights as all players and are bound by the same rules.                                   
+                                    </span>
+                           	        <li class="style1">Dealers will position themselves at their table so that they can best see the clock, blinds, and antes.                                
+                            	</ol>
+                  </div>
+                  <h3 class="vertical_accordion_toggle">Procedures</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> The league management will decide when to start or close any <s>game</s><span class="style1"> tournament</span>. </li>
+                                    <li> <s>Collections (seat rental fees)</s> <span class="style1">Tournament fees</span> are <span class="style1">normally</span> paid in advance. <s>In all time-collection games, the dealer is required to pick up the collection from each player before dealing.</s> <span class="style1">If a player is arriving late, league management should be notified and tournaments fee should be paid immediately upon arrival.</span></li>
+                                    <li> Cash is not permitted on the table. <s>All cash should be changed into chips in order to play. </s></li>
+                                    <li> Chips may not be removed when leaving the table unless moving to another table. </li>
+                                    <li> All chips must be kept in plain view. Awareness of the amount being in play for each opponent is an important part of poker. </li>
+                                    <li> Playing out of a rack is not allowed. </li>
+                                    <li> Only one person may play a hand. </li>
+                                    <li> No one is allowed to play another player&rsquo;s chips. </li>
+                                    <li> Pushing an ante or posting for another person is not allowed except for the dealer posting for an absent player. </li>
+                                    <li> Players must keep their cards in full view. This means above table-level and not past the edge of the table. The cards should not be covered by the hands in a manner to completely conceal them. </li>
+                                    <li> Any player is entitled to a clear view of an opponent&rsquo;s chips. Higher denomination chips should be easily visible. </li>
+                                    <li> Looking through the discards or deck stub is not allowed. </li>
+                                    <li> After a deal ends, dealers are asked to not show what card would have been dealt. </li>
+                                    <li> A player is expected to pay attention to the game and not hold up play. Activity that interferes with this such as reading at the table is discouraged, and the player will be asked to cease if a problem is caused. </li><li> A non-player may sit at the table at the discretion of the dealer. </li>
+                                    <li> Speaking a foreign language during a deal is not allowed. </li>
+                                </ol>
+                            </div>
+                        <h3 class="vertical_accordion_toggle">Seating</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li><span class="style1">Initial seating is determined by random draw</span><s> or assignment</s>. <span class="style3">(Moved from Section 10 - Tournaments, Rule 2)</span></li>
+                                    <li> It is the player&rsquo;s responsibility to be in the playing area and <s>hear the list being called</s> <span class="style1">ready to draw for position when a tournament is about to begin. Players should also be present when their table is being removed from play in order to move to their new seat.</span></li>
+                                    <li> A player may not hold a seat in more than one game. <span class="style1">Participation in side games should only commence after elimination from a tournament.</span></li>
+                                    <li> When a <s>button</s> game starts, active players will <s>draw</s> <span class="style1">be dealt</span> a card for the button position. The button will be awarded to the highest card by rank and then by suit for all games. <span class="style1">A deal for button position will also occur each time at least one new player is added to a table. </span><span class="style3">(Moved from Section 10 - Tournaments, Rule 2)</span></li>
+                                    <li class="style1">The appropriate starting amount of chips will be placed on the table for each paid entrant at the beginning of the event, whether the person is present or not. <span class="style3">(Moved from Section 10 - Tournaments, Rule 3)</span></li>
+                                    <li class="style1"> If a paid entrant is absent at the start of an event, at some point an effort will be made to locate and contact the player. If the player requests the chips be left in place until arrival, the request will be honored. If the player is unable to be contacted, the chips may be removed from play at the discretion of the director anytime after an hour has elapsed. <span class="style3">(Moved from Section 10 - Tournaments, Rule 4)</span></li>
+                                    <li class="style1"> A starting stack of chips may be placed in a seat to accommodate late entrants (so all antes and blinds have been appropriately paid). An unsold seat will have such a stack removed at a time left to the discretion of the director. <span class="style3">(Moved from Section 10 - Tournaments, Rule 5)</span></li>
+                                    <li class="style1"> A no-show or absent player is always dealt a hand. That player&rsquo;s stack will post chips for blinds and antes. <span class="style3">(Moved from Section 10 - Tournaments, Rule 6)</span></li>
+                                </ol>
+                  </div>
+
+              </div>
+            </div>
+
+		<h1 class="accordion_toggle">Section 3 - General Poker Rules</h1>
+			<div class="accordion_content">
+                <div id="vertical_nested_container" >
+                        <h3 class="vertical_accordion_toggle">The Buy-in</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> When you enter a tournament, you must make a full buy-in. </li>
+                                    <li> You are allowed to make only one buy-in for a tournament. </li>
+                                    <li> You may not purchase more chips at any point in the tournament. </li>
+                                </ol>
+                            </div>
+                        <h3 class="vertical_accordion_toggle">Misdeals</h3>
+                            <div class="vertical_accordion_content">
+                            The following circumstances cause a misdeal, provided attention is called to the error before two players have acted on their hands. (If two players have acted in turn, the deal must be played to conclusion<s>, as explained in rule #2</s>):
+                            	<ol>
+                                	<li> The first or second card of the hand has been dealt faceup or exposed through dealer error. </li>
+                                    <li> Two or more cards have been exposed by the dealer. </li>
+                                    <li> Two or more boxed cards (improperly faced cards) are found. </li>
+                                    <li> Two or more extra cards have been dealt in the starting hands of a game. </li>
+                                    <li> An incorrect number of cards has been dealt to a player, except the top card may be dealt if it goes to the player in proper sequence. </li>
+                                    <li> Any card has been dealt out of the proper sequence (except an exposed card may be replaced by the burncard). </li>
+                                    <li> The button was out of position. </li>
+                                    <li> The first card was dealt to the wrong position. </li>
+                                    <li> Cards have been dealt to an empty seat or a player not entitled to a hand. </li>
+                                    <li> A player has been dealt out who is entitled to a hand. This player must be present at the table or have posted a blind or ante.  </li>
+                                </ol>
+                            Once action begins, a misdeal cannot be called. The deal will be played, and no money will be returned to any player whose hand is fouled. In button games, action is considered to occur when two players after the blinds have acted on their hands. In stud games, action is considered to occur when two players after the forced bet have acted on their hands.
+                  </div>
+                  <h3 class="vertical_accordion_toggle">Dead Hands</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> Your hand is declared dead if:
+                                    	<ol type="a">
+                                        	<li> You fold or announce that you are folding when facing a bet or a raise.</li>
+                                            <li> You throw your hand away in a forward motion causing another player to act behind you (even if not facing a bet).</li>
+                                            <li> In stud, when facing a bet, you pick your upcards off the table, turn your upcards facedown, or mix your upcards and downcards together.</li>
+                                            <li> The hand does not contain the proper number of cards for that particular game (except at stud a hand missing the final card may be ruled live). [See Section 16 - &ldquo;Explanations,&rdquo; discussion #4, for more information on the stud portion of this rule.] </li>
+                                            <li> You act on a hand with a joker as a holecard. (A player who acts on a hand without looking at a card assumes the liability of finding an improper card, as given in Irregularities, rule #8.) </li>
+                                            <li> You have the clock on you when facing a bet or raise and exceed the specified time limit. </li>
+                                        </ol>
+                                    </li>
+                                    <li> Cards thrown into the muck may be ruled dead. However, a hand that is clearly identifiable may be retrieved and ruled live at the league management&rsquo;s discretion if doing so is in the best interest of the game. We will make an extra effort to rule a hand retrievable if it was folded as a result of incorrect information given to the player. </li>
+                                    <li> Cards thrown into another player&rsquo;s hand are dead, whether they are faceup or facedown. </li>
+                                </ol>
+                            </div>
+                         <h3 class="vertical_accordion_toggle">Irregularities</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> In button games, if it is discovered that the button was placed incorrectly on the previous hand, the button and blinds will be corrected for the new hand in a manner that gives every player one chance for each position on the round (if possible). </li>
+                                    <li> You must protect your own hand at all times. Your cards may be protected with your hands, a chip, or other object placed on top of them. If you fail to protect your hand, you will have no redress if it becomes fouled or the dealer accidentally kills it. </li>
+                                    <li> If a card with a different color back appears during a hand, all action is void and all chips in the pot are returned to the respective bettors. If a card with a different color back is discovered in the stub, all action stands. </li>
+                                    <li> If two cards of the same rank and suit are found, all action is void, and all chips in the pot are returned to the players who wagered them (subject to next rule). </li>
+                                    <li> A player who knows the deck is defective has an obligation to point this out. If such a player instead tries to win a pot by taking aggressive action (trying for a freeroll), the player may lose the right to a refund, and the chips may be required to stay in the pot for the next deal. </li>
+                                    <li> If there is extra money in the pot on a deal as a result of forfeited money from the previous deal (as per rule #5), or some similar reason, only a player dealt in on the previous deal is entitled to a hand. </li>
+                                    <li> A card discovered faceup in the deck (boxed card) will be treated as a meaningless scrap of paper. A card being treated as a scrap of paper will be replaced by the next card below it in the deck, except when the next card has already been dealt facedown to another player and mixed in with other downcards. In that case, the card that was faceup in the deck will be replaced after all other cards are dealt for that round. </li>
+                                    <li> A joker that appears in a game where it is not used is treated as a scrap of paper. Discovery of a joker does not cause a misdeal. If the joker is discovered before a player acts on his or her hand, it is replaced as in the previous rule. If the player does not call attention to the joker before acting, then the player has a dead hand. </li>
+                                    <li> If you play a hand without looking at all of your cards, you assume the liability of having an irregular card or an improper joker. </li>
+                                    <li> One or more cards missing from the deck does not invalidate the results of a hand. </li>
+                                    <li> Before the first round of betting, if a dealer deals one additional card, it is returned to the deck and used as the burncard. </li>
+                                    <li> Procedure for an exposed card varies with the poker form, and is given in the section for each game. A card that is flashed by a dealer is treated as an exposed card. A card that is flashed by a player will play. To obtain a ruling on whether a card was exposed and should be replaced, a player should announce that the card was flashed or exposed before looking at it. A downcard dealt off the table is an exposed card. </li>
+                                    <li> If a card is exposed due to dealer error, a player does not have an option to take or reject the card. The situation will be governed by the rules for the particular game being played. </li>
+                                    <li> If you drop any cards out of your hand onto the floor, you must still play them. </li>
+                                    <li> If the dealer fails to burn a card or burns more than one card, the error should be corrected if discovered before betting action has started for that round. Once action has been taken on a boardcard, the card must stand. Whether the error is able to be corrected or not, subsequent cards dealt should be those that would have come if no error had occurred. For example, if two cards were burned, one of the cards should be put back on the deck and used for the burncard on the next round. On the last round, if there was no betting because a player was all-in, the error should be corrected if discovered before the pot has been awarded. </li>
+                                    <li> If the dealer prematurely deals any cards before the betting is complete, those cards will not play, even if a player who has not acted decides to fold. </li>
+                                </ol>
+                            </div>
+                         <h3 class="vertical_accordion_toggle">Betting and Raising</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> Check-raise is permitted in all games. </li>
+                               	  <li> Unlimited raising is allowed. </li>
+                                    <li> <s>Unlimited raising is allowed in heads-up play. This applies any time the action becomes heads-up before the raising has been capped. Once the raising is capped on a betting round, it cannot be uncapped by a subsequent fold that leaves two players heads-up. </s></li>
+                                  <li> The smallest chip that may be wagered in a game is the smallest chip used in the antes and/or blinds. A player going all-in must put all chips that play into the pot. </li>
+                                  <li> A verbal statement denotes your action and is binding. If in turn you verbally declare a fold, check, bet, call, or raise, you are forced to take that action. </li>
+                                    <li> Rapping the table with your hand is a pass. </li>
+                                    <li> Deliberately acting out of turn will not be tolerated. A player who checks out of turn may not bet or raise on the next turn to act. An action or verbal declaration out of turn may be ruled binding if there is no bet, call, or raise by an intervening player acting after the infraction has been committed. A player who has called out of turn may not change his wager to a raise under any circumstances. </li>
+                                    <li> <s>To retain the right to act, a player must stop the action by calling &ldquo;time&rdquo; (or an equivalent word). </s>Failure to stop the action before three or more players have acted behind you may cause you to lose the right to act. You cannot forfeit your right to act if any player in front of you has not acted, only if you fail to act when it legally becomes your turn. Therefore, if you wait for someone whose turn comes before you, and three or more players act behind you, this still does not hinder your right to act. </li>
+                                  <li> If you make a forward motion with chips and thus cause another player to act, you may be forced to complete your action. </li>
+                                    <li>A player who bets, calls, or raises by releasing chips into the pot is bound by that action and must make the amount of the wager correct. (This also applies right before the showdown when putting chips into the pot causes the opponent to show the winning hand before the full amount needed to call has been put into the pot.) However, if you are unaware that the pot has been raised, you may withdraw that money and reconsider your action, provided that no one else has acted after you.</li>
+                                    <li> String raises are not allowed. To protect your right to raise, you should either declare your intention verbally or place the proper amount of chips into the pot.</li>
+                                    <li>If you put any number of chips in the pot that is larger than the bet and do not announce that you are calling, you are assumed to have raised. Example: In a $3-$6 game, when a player bets $6 and the next player puts a $25 chip or $25 total in chips in the pot without saying anything, that player is assumed to have raised to a total of $25.</li>
+                                    <li> All wagers and calls of an improperly low amount must be brought up to proper size if the error is discovered before the betting round has been completed. This includes actions such as betting a lower amount than the minimum bring-in (other than going all-in) and betting the lower limit on an upper limit betting round. If a wager is supposed to be made in a rounded off amount, is not, and must be corrected, it shall be changed to the proper amount nearest in size. No one who has acted may change a call to a raise because the wager size has been changed. </li>
+                                </ol>
+                            </div>
+                         <h3 class="vertical_accordion_toggle">The Showdown</h3>
+                            <div class="vertical_accordion_content">
+                            	<ol>
+                                	<li> To win any part of a pot, a player must show all of his cards faceup on the table, whether they were used in the final hand played or not. </li>
+                                    <li> Cards speak (cards read for themselves). The dealer assists in reading hands, but players are responsible for holding onto their cards until the winner is declared. Although verbal declarations as to the contents of a hand are not binding, deliberately miscalling a hand with the intent of causing another player to discard a winning hand is unethical and may result in forfeiture of the pot. </li>
+                                    <li> Any player, dealer, or member of league management who sees an incorrect amount of chips put into the pot, or an error about to be made in awarding a pot, has an ethical obligation to point out the error. Please help keep mistakes of this nature to a minimum. </li>
+                                    <li> All losing hands will be killed by the dealer before a pot is awarded. </li>
+                                    <li> Any player who has been dealt in may request to see any hand that is eligible to participate in the showdown, even if the opponent's hand or the winning hand has been mucked. However, this is a privilege that may be revoked if abused. If a player other than the pot winner asks to see a hand that has been folded, that hand is dead. If the winning player asks to see a losing player&rsquo;s hand, both hands are live, and the best hand wins. </li>
+                                    <li> Show one, show all. Players are entitled to receive equal access to information about the contents of another player&rsquo;s hand. After a deal, if cards are shown to another player, every player at the table has a right to see those cards. During a deal, cards that were shown to an active player who might have a further wagering decision on that betting round must immediately be shown to all the other players. If the player who saw the cards is not involved in the deal, or cannot use the information in wagering, the information should be withheld until the betting is over, so it does not affect the normal outcome of the deal. Cards shown to a person who has no more wagering decisions on that betting round, but might use the information on a later betting round, should be shown to the other players at the conclusion of that betting round. If only a portion of the hand has been shown, there is no requirement to show any of the unseen cards. The shown cards are treated as given in the preceding part of this rule. </li>
+                                    <li> If everyone checks (or is all-in) on the final betting round, the player who acted first is the first to show the hand. If there is wagering on the final betting round, the last player to take aggressive action by a bet or raise is the first to show the hand. In order to speed up the game, a player holding a probable winner is encouraged to show the hand without delay. If there is a side pot, players involved in the side pot should show their hands before anyone who is all-in for only the main pot.</li>
+                                </ol>
+                            </div>
+                         <h3 class="vertical_accordion_toggle">Ties</h3>
+                            <div class="vertical_accordion_content">
+                     	       <ol>
+                               	<li> The ranking of suits from highest to lowest is spades, hearts, clubs, diamonds. Suits never break a tie for winning a pot. Suits are used to break a tie between cards of the same rank for color-ups and dealing for button position (no redeal or redraw). </li>
+                                <li> Dealing a card to each player is used to determine things like who moves to another table. If the cards are dealt, the order is clockwise starting with the first player on the dealer&rsquo;s left (the button position is irrelevant). Drawing a card is used to determine things like who gets the button in a new game, or seating order coming from a broken game. </li>
+                                <li> An odd chip will be broken down to the smallest unit used in the game. </li>
+                                <li> No player may receive more than one odd chip. </li>
+                                <li> If two or more hands tie, an odd chip will be awarded to the first hand clockwise from the button. </li>
+                            </ol>
+                        </div>
+              </div>
+            </div>
+
+		<h1 class="accordion_toggle">Section 4 - Button and Blind Use</h1>
+			<div class="accordion_content">
+   				<p>In button games, an assigned dealer normally does the actual dealing. A round disk called the button is used to indicate which player has the dealer position. The player with the button is last to receive cards on the initial deal and has the right of last action after the first betting round. The button moves clockwise after a deal ends to rotate the advantage of last action. One or more blind bets are usually used to stimulate action and initiate play. Blinds are posted before the players look at their cards. Blinds are part of a player&rsquo;s bet (unless a certain structure or situation specifies otherwise). With two blinds, the small blind is posted by the first player clockwise from the button, and the big blind is posted by the player two positions clockwise from the button. Action is initiated on the first betting round by the first player to the left of the blinds. On all subsequent betting rounds, the action begins with the first active player to the left of the button.</p>
+                <h5>RULES FOR USING BLINDS</h5>
+                <ol>
+                  	<li>The minimum bring-in and allowable raise sizes for the opener are specified by the poker form used and blind amounts set for a game. They remain the same even when the player in the blind does not have enough chips to post the full amount. </li>
+                    <li> Each round every player must get an opportunity for the button. The button always moves forward to the next player and the blinds adjust accordingly. </li>
+                    <li> A player posting a blind in the game&rsquo;s regular structure has the option of raising the pot at the first turn to act. Although chips posted by the big blind are considered a bet, this option to raise is retained if someone goes all-in with a wager of less than the minimum raise. </li>
+                    <li> In heads-up play with two blinds, the small blind is on the button. </li>
+                    <li> No player can receive the big blind twice in a row. In the case that the normal rotation of the button would cause a player to have the big blind twice in a row, the button will advance one player to its left and the blinds will be placed accordingly. </li>
+                    <li> When you post the big blind, it serves as your opening bet. When it is your next turn to act, you have the option to raise. </li>
+                </ol>
+            </div>
+
+		<h1 class="accordion_toggle">Section 5 - Hold'em</h1>
+			<div class="accordion_content">
+            	<p>In hold&rsquo;em, players receive two downcards as their personal hand (holecards), after which there is a round of betting. Three boardcards are turned simultaneously (called the &ldquo;flop&rdquo;) and another round of betting occurs. The next two boardcards are turned one at a time, with a round of betting after each card. The boardcards are community cards, and a player may use any five-card combination from among the board and personal cards. A player may even use all of the boardcards and no personal cards to form a hand (play the board).</p>
+                <p>A dealer button is used. Hold&rsquo;em is played with a small and a big blind in play. Hold'em will use the small blind / big blind  schedule as listed in Section 11.</p>
+                <h5>RULES</h5>
+                <p align="left"> These rules deal only with irregularities. See the previous chapter, &ldquo;Button and Blind Use,&rdquo; for rules on that subject. </p>
+                <ol>
+                	<li> If the first or second holecard dealt is exposed, a misdeal results. The dealer will retrieve the card, reshuffle, and recut the cards. If any other holecard is exposed due to a dealer error, the deal continues. The exposed card may not be kept. After completing the hand, the dealer replaces the card with the top card on the deck, and the exposed card is then used for the burncard. If more than one holecard is exposed, this is a misdeal and there must be a redeal. </li>
+                    <li> If the dealer mistakenly deals the first player an extra card (after all players have received their starting hands), the card will be returned to the deck and used for the burncard. If the dealer mistakenly deals more than one extra card, it is a misdeal. </li>
+                    <li> If the flop contains too many cards, it must be redealt. (This applies even if it were possible to know which card was the extra one.) </li>
+                    <li> If before dealing the flop, the dealer failed to burn a card, or burned two cards, the error should be rectified if no cards were exposed. The deck must be reshuffled if any cards were exposed. </li>
+                    <li> If the dealer fails to burn a card or burns more than one card, the error should be corrected if discovered before betting action has started for that round. Once action has been taken on a boardcard, the card must stand. Whether the error is able to be corrected or not, subsequent cards dealt should be those that would have come if no error had occurred. For example, if two cards were burned, one of the cards should be put back on the deck and used for the burncard on the next round. If there was no betting on a round because a player was all-in, the error should be corrected if discovered before the pot has been awarded. </li>
+                    <li> If the dealer burns and turns before a betting round is complete, the card(s) may not be used, even if subsequent players elect to fold. Nobody has an option of accepting or rejecting the card. The betting is then completed, and the error rectified in the prescribed manner for that situation. </li>
+                    <li> If the flop needs to be redealt for any reason, the boardcards are mixed with the remainder of the deck. The burncard remains on the table. After shuffling, the dealer cuts the deck and deals a new flop without burning a card.</li>
+                    <li> A dealing error for the fourth boardcard is rectified in a manner to least influence the identity of the boardcards that would have been used without the error. The dealer burns and deals what would have been the fifth card in the fourth card&rsquo;s place. After this round of betting, the dealer reshuffles the deck, including the card that was taken out of play, but not including the burncards or discards. The dealer then cuts the deck and deals the final card without burning a card. If the fifth card is turned up prematurely, the deck is reshuffled and dealt in the same manner.</li>
+                    <li> You must declare that you are playing the board before you throw your cards away. Otherwise, you relinquish all claim to the pot. </li>
+                    <li>If you are not present at the table when it is your turn to act on your hand, the hand will be killed when the betting reaches your seat and your blind (if applicable) will be forfeit. </li>
+                </ol>
+ 		  	</div>
+
+		<h1 class="accordion_toggle">Section 6 - Omaha</h1>
+			<div class="accordion_content">
+            	<p> Omaha is similar to hold&rsquo;em in using a three-card flop on the board, a fourth boardcard, and then a fifth boardcard. Each player is dealt four holecards (instead of two) at the start. In order to make a hand, a player must use precisely two holecards with three boardcards. The betting is the same as in hold'em, using a preflop, flop, turn, and river betting rounds. At the showdown, the entire four-card hand should be shown to receive the pot. </p>
+                <p>A dealer button is used. Omaha is played with a small and a big blind in play. Omaha will use the small blind / big blind  schedule as listed in the General League Information.</p>
+                <h5> RULES OF OMAHA </h5>
+                <ol>
+                	<li> All the rules of Hold&rsquo;em apply to Omaha except the rule on playing the board, which is not possible in Omaha (because you must use two cards from your hand and three cards from the board). </li>
+                </ol>
+            </div>
+
+		<h1 class="accordion_toggle">Section 7 - Seven-Card Stud</h1>
+			<div class="accordion_content">
+            	<p> Seven-card stud is played with a starting hand of two downcards and one upcard dealt before the first betting round. There are then three more upcards and a final downcard, with a betting round after each, for a total of five betting rounds on a deal played to the showdown. The best five-card poker hand wins the pot. Deliberately changing the order of your upcards in a stud game is improper because it unfairly misleads the other players. </p>
+                <p>Only the dealer button is used. Antes are collected from every player at the table before each hand is dealt. Seven-card stud will use the ante / minimum bet schedule as listed in Section 11.</p>
+                <h5> RULES OF SEVEN-CARD STUD </h5>
+                <ol>
+                	<li>If your first or second holecard is accidentally turned up by the dealer, a misdeal is called. </li>
+                    <li>For all  betting rounds, the high hand on board initiates the action (a tie is broken by position, with the player who received cards first acting first). </li>
+                    <li> If the player with the high hand is all-in, the person to that player&rsquo;s left acts first. </li>
+                    <li> When the wrong person is designated as high and acts, if the next player has not yet acted, the action will be corrected to the real high hand, who now must act. The incorrect bettor takes back their action. If the next hand has acted after the incorrect high hand action, the action stands, action continues from there, and the real high hand has no obligations. </li>
+                    <li>If you are not present at the table when it is your turn to act on your hand, the hand will be killed when the betting reaches your seat and your ante will be forfeit. </li>
+                    <li> If you pick up your upcards without calling when facing a wager, this is a fold and your hand is dead. This act has no significance at the showdown because betting is over; the hand is live until discarded. </li>
+                    <li> A card dealt off the table is treated as an exposed card. </li>
+                    <li> The dealer announces the the high hand, all raises, and all pairs. Dealers do not announce possible straights or flushes. </li>
+                    <li> If the dealer burns two cards for one round or fails to burn a card, the cards will be corrected, if at all possible, to their proper positions. If this should happen on a final downcard, and either a card intermingles with a player's other holecards or a player looks at the card, the player must accept that card. </li>
+                    <li> If the dealer burns and deals one or more cards before a round of betting has been completed, the card(s) must be eliminated from play. After the betting for that round is completed, an additional card for each remaining player still active in the hand is also eliminated from play (to later deal the same cards to the players who would have received them without the error). After that round of betting has concluded, the dealer burns a card and play resumes. The removed cards are held off to the side in the event the dealer runs out of cards. If the prematurely dealt card is the final downcard and has been looked at or intermingled with the player's other holecards, the player must keep the card, and on sixth street betting may not bet or raise (because the player now has all seven cards). </li>
+                    <li>If there are not enough cards left in the deck for all players to receive a fresh card,  then the dealer announces to the table that a common card will be used. The dealer will burn a card and turn one card faceup in the center of the table as a common card that plays in everyone&rsquo;s hand. If there is only one card remaining in the stub, the dealer will mix the remaining card with the burn cards and any cards removed from the deck by the previous rule. The player who is now high using the common card initiates the action for the last round. </li>
+                    <li> An all-in player should receive holecards dealt facedown, but if the final holecard to such a player is dealt faceup, the card must be kept, and the other players receive their normal card. </li>
+                    <li> If the dealer turns the last card faceup to any player, the hand now high on the board using all the upcards will start the action. The following rules apply to the dealing of cards:
+                    	<ol type="a">
+                        	<li>If there are more than two players, all remaining players receive their last card facedown. A player whose last card is faceup has the option of acting before betting action starts. </li>
+                            <li>If there are only two players remaining and the first player's final downcard is dealt faceup, the second player's final downcard will also be dealt faceup, and the betting proceeds as normal. In the event the first player's final card is dealt facedown and the opponent's final card is dealt faceup, the player with the faceup final card has the option of acting before betting action starts. </li>
+                        </ol>
+                    </li>
+                    <li> A hand with more than seven cards is dead. A hand with less than seven cards at the showdown is dead, except any player missing a seventh card may have the hand ruled live. </li>
+                    <li> A player who calls a bet even though beaten by an opponent&rsquo;s upcards is not entitled to a refund. (The caller receives information about the opponent that is not available for free.) </li>
+                </ol>
+            </div>
+
+		<h1 class="accordion_toggle">Section 8 - Crazy Pineapple</h1>
+			<div class="accordion_content">
+            	<p> Crazy Pineapple is similar to Hold&rsquo;em in using a three-card flop on the board, a fourth boardcard, and then a fifth boardcard. Each player is dealt three holecards (instead of two) at the start. The betting is the same as in hold'em, using a preflop, flop, turn,and river betting rounds. However, after the betting round following the flop, each remaining player must discard one of their holecards. In order to make a hand, a player can use any combination of fivecards between the five community cards and their two holecards. At the showdown, the entire two-cardhand should be shown to receive the pot. </p>
+                <p>A dealer button is used. Crazy Pineapple is played with a small and a big blind in play. Crazy Pineapple will use the small blind / big blind  schedule as listed in Section 11.</p>
+                <h5> RULES OF CRAZY PINEAPPLE </h5>
+                <ol>
+                	<li> All the rules of Hold&rsquo;em apply to Crazy Pineapple.</li>
+                    <li>In the case of one or more players being &quot;all-in&quot; and there is no action remaining, no one shall reveal their hand until each remaining player in the hand has discarded proceding the flop. </li>
+                </ol>
+            </div>
+
+		<h1 class="accordion_toggle">Section 9 - No Limit</h1>
+			<div class="accordion_content">
+            	<p>No-limit means that the amount of a wager is limited only by the table stakes rule, so any part or all of a player&rsquo;s chips may be wagered. </p>
+                <h5> NO-LIMIT RULES </h5>
+                <ol>
+                	<li> The number of raises in any betting round is unlimited. </li>
+                    <li> All bets must be at least equal to the minimum bring-in, unless the player is going all-in.<s> (A straddle bet sets a new minimum bring-in, and is not treated as a raise.) </s>The minimum bet remains the same amount on all betting rounds. </li>
+                  <li> A wager is not binding until the chips are actually released into the pot, unless the player has made a verbal statement of action. </li>
+                    <li> If there is a discrepancy between a player's verbal statement and the amount put into the pot, the bet will be corrected to the verbal statement. </li>
+                    <li> If a call is short due to a counting error, the amount must be corrected, even if the bettor has shown down a superior hand. </li>
+                    <li> Because the amount of a wager at big-bet poker has such a wide range, a player who has taken action based on a gross misunderstanding of the amount wagered needs some protection. A &quot;call&quot; may be ruled not binding if it is obvious that the player grossly misunderstood the amount wagered. A bettor should not show down a hand until the amount put into the pot for a call seems reasonably correct, or it is obvious that the caller understands the amount wagered. The decision-maker is allowed considerable discretion in ruling on this type of situation. A possible rule-of-thumb is to disallow any claim of not understanding the amount wagered if the caller has put eighty percent or more of that amount into the pot.
+                    <p>Example: On the end, a player puts a $500 chip into the pot and says softly, &ldquo;Four hundred.&rdquo; The opponent puts a $100 chip into the pot and says, &ldquo;Call.&rdquo; The bettor immediately shows the hand. The dealer says, &ldquo;He bet four hundred.&rdquo; The caller says, &ldquo;Oh, I thought he bet a hundred.&rdquo; In this case, the recommended ruling normally is that the bettor had an obligation to not show the hand when the amount put into the pot was obviously short, and the &ldquo;call&rdquo; can be retracted. Note that the character of each player can be a factor. (Unfortunately, situations can arise at big-bet poker that are not so clear-cut as this.) </li>
+                    <li>If a player tries to bet less than the legal minimum and has more chips, the wager must be increased to the proper size. The wager is brought up to the sufficient amount only, no greater size. </li>
+                  <li> All wagers may be required to be in the same denomination of chip (or larger) used for the minimum bring-in, even if smaller chips are used in the blind structure. If this is done, the smaller chips do not play except in quantity, even when going all-in. </li>
+                    <li> The house has the right to place a maximum time limit for taking action on your hand. The clock may be put on someone by the dealer as directed by a member of league management, if a player requests it. If the clock is put on a player when the player is facing a bet, the player will have thirty seconds to act on their hand. There will also be a ten-second warning, after which the hand will be declared dead if the player has not acted. </li>
+                    <li> The cardroom does not condone &quot;insurance&quot; or any other &ldquo;proposition&rdquo; wagers. The management will decline to make decisions in such matters, and the pot will be awarded to the best hand. Players are asked to refrain from instigating proposition wagers in any form. </li>
+                </ol>
+          </div>
+
+		<h1 class="accordion_toggle">Section 10 - Tournaments</h1>
+			<div class="accordion_content">
+            	<ol>
+                	<li> <s>By participating in a tournament, you agree to abide by the rules and behave in a courteous manner. A violator may be verbally warned, suspended from play for a specified length of time, or disqualified from the tournament. Chips from a disqualified participant will be removed from play. Players, whether in the hand or not, may not discuss the hands until the action is complete. Players are obligated to protect the other players in the tournament at all times. Discussing cards discarded or hand possibilities is not allowed. A penalty may be given for discussion of hands during the play. </s></li>
+                    <li> <s>Initial seating is determined by random draw or assignment. </s></li>
+                    <li><s> The appropriate starting amount of chips will be placed on the table for each paid entrant at the beginning of the event, whether the person is present or not. </s></li>
+                    <li><s> If a paid entrant is absent at the start of an event, at some point an effort will be made to locate and contact the player. If the player requests the chips be left in place until arrival, the request will be honored. If the player is unable to be contacted, the chips may be removed from play at the discretion of the director anytime after an hour has elapsed. </s></li>
+                    <li><s> A starting stack of chips may be placed in a seat to accommodate late entrants (so all antes and blinds have been appropriately paid). An unsold seat will have such a stack removed at a time left to the discretion of the director. </s></li>
+                    <li><s> A no-show or absent player is always dealt a hand. That player&rsquo;s stack will post chips for blinds and antes. </s></li>
+                    <li><s> In all tournament games using a dealer button, the starting position of the button is determined by the players drawing for the high card. </s></li>
+                    <li> Limits<span class="style1">, antes,</span> and blinds are raised at regularly scheduled intervals. </li>
+                    <li><s> If there is a </s><span class="style1">Upon the</span> signal designating the end of a betting level, the new limits apply on the next deal. (A deal begins with the first riffle of the shuffle.) </li>
+                    <li> The lowest denomination of chip in play will be removed from the table when it is no longer needed in the blind or ante structure. All lower-denomination chips that are of sufficient quantity for a new chip will be changed up directly. The method for removal of odd chips is to deal one card to a player for each odd chip possessed. Cards are dealt clockwise starting with the 1-seat. The player with the highest card first by rank (Ace high, then King, etc.) and then by suit (Spades high, then Hearts, Clubs, and Diamonds) is given enough odd chips to exchange for one new chip, the second-highest card gets to exchange for the next chip, and so forth, until all the lower-denomination chips are exchanged. A player may not be eliminated from the event by the chip-change process. If a player has no chips after the race has been held, he will be given a chip of the higher denomination before anyone else is awarded a chip. No player can receive more than one chip. </li
+                    ><li><s>A player must be present at the table to stop the action by calling &ldquo;time.&rdquo; The validity of this call will be determined by the league management. </s></li>
+                    <li> A player must be at the table by the time it is their turn to act in order to have a live hand for that deal. (The dealer has been instructed to kill the hands of all absent players immediately after it is the absent player&rsquo;s turn to act.) </li>
+                    <li class="style4">A change of seat is not allowed after play starts, except as assigned by the league management. </li>
+                    <li class="style4">As players are eliminated, tables are broken in a pre-set order, with players from the broken tables assigned to empty seats at other tables. In general this means that players from tables with a smaller total capacity and/or area are moved to the larger tables first and then to the first available position clockwise from the dealer.</li>
+                    <li class="style4"> The number of players at each table will be kept reasonably balanced by the transfer of a player as needed. Table size will be kept within three players. </li>
+                    <li class="style4">  If a player is needed to move from a table to balance tables, the player due for the big blind will be automatically selected to move, and will be given the earliest seat due for the big blind if more than one seat is open. </li>
+                    <li class="style4"> New players are dealt in immediately and take over the obligations of that position, including the small blind or button position. </li>
+                    <li class="style4"><span class="style4"> In all events, there is a redraw for seating when the field is reduced to one table.</span> </li>
+                  <li> A player who declares all in and loses the pot, then discovers that one or more chips were hidden, is not entitled to benefit from this. That player is eliminated from the tournament if the opponent had sufficient chips to cover the hidden. If another deal has not yet started, the league management may rule the chips belong to the opponent who won that pot, if that obviously would have happened with the chips out in plain view. If the next deal has started, the discovered chips are removed from the tournament. </li>
+                    <li> If a player lacks sufficient chips for a blind or a forced bet, the player is entitled to get action on whatever amount of money is left in his stack. A player who posts a short blind and wins does not need to make up the blind. </li>
+                    <li> All players may remain in their seat immediately after being eliminated from an event, unless asked to leave by league management. </li>
+                    <li> Showing cards from a live hand during the action injures the rights of other players still competing in an event, who wish to see contestants eliminated. A player in a multihanded pot may not show any cards during a deal. Heads-up, a player may not show any cards unless the event has only two remaining players, or is winner-take-all. If a player deliberately shows a card, the player may be penalized (but his hand will not be ruled dead). Verbally stating one&rsquo;s hand during the play, regardless of whether it has been already mucked or not, may be penalized. </li>
+                    <li> The player must either use a verbal statement giving the amount of the raise or put chips into the pot in a single motion. Otherwise, it is a string bet. </li>
+                    <li> Non-tournament chips are allowed on the table as card protectors or luck charms, but must be removed at the request of the league management. </li>
+                    <li> Higher-denomination chips must be placed where they are easily visible to all other players at the table. </li>
+                    <li> All tournament chips must remain visible on the table throughout the event. Chips taken off the table will be removed from the event, and a player doing this may be disqualified. </li>
+                    <li> Inappropriate behavior like throwing cards that go off the table may be punished with a penalty such as being dealt out for a length of time. A severe infraction such as abusive or disruptive behavior may be punished by eviction from the tournament. </li>
+                    <li> The deck is changed only when <s>dealers change, unless </s>a card is damaged. </li>
+                    <li> In heads-up play with two blinds, the small blind is on the button. </li>
+                    <li> At stud, if a downcard on the initial hand is dealt faceup, a misdeal is called. </li>
+                    <li> All hands will be turned faceup whenever a player is all-in and betting action is complete. </li>
+                    <li> If multiple players go broke on the same hand, the player starting the hand with the larger amount of chips finishes in the higher place for prize money and any other award. </li>
+                    <li> League management is not required to rule on any private deals, side bets, or redistribution of the prize pool among finalists. </li>
+                    <li> Private agreements by remaining players in an event regarding distribution of the prize pool are not condoned. (However, if such an agreement is made, the director has the option of ensuring that it is carried out by paying those amounts.) Any private agreement that does not include one or more active competitors is improper by definition. </li>
+                    <li> A tournament event is expected to be played until completion. A private agreement that removes all prize money from being at stake in the competition is unethical. </li>
+                    <li>The tournament directors retain the right to cancel any event, or alter it in a manner fair to the players. </li>
+                </ol>
+          </div>
+
+		<h1 class="accordion_toggle">Section 11 - General League Information</h1>
+			<div class="accordion_content">
+                <div id="vertical_nested_container" >
+                        <h3 class="vertical_accordion_toggle">Blind and Ante Schedule</h3>
+            	<table align="center" border="1" cellpadding="1" width="100%">
+                	<tr><td colspan="4"><div align="center"><u><strong>Hold'em, Omaha, and Pineapple</strong></u></div></td><td width=25 rowspan="18"><div align="center"><u></u></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div>                	  <div align="center"></div></td><td colspan="4"><div align="center"><u><strong>7-Card Stud</strong></u></div></td></tr>
+                	<tr><td><div align="center"><strong>Round</strong></div></td><td><div align="center"><strong>Duration</strong></div></td><td><div align="center"><strong>Small Blind</strong></div></td><td><div align="center"><strong>Big Blind</strong></div></td>
+                	  <td><div align="center"><strong>Round</strong></div></td>
+                	  <td><div align="center"><strong>Duration</strong></div></td>
+               	    <td><div align="center"><strong>Ante</strong></div></td><td><div align="center"><strong>Minimum Bet</strong></div></td></tr>
+                	<tr>
+                	  <td><div align="center">1</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">1</div></td>
+                	  <td><div align="center">2</div></td>
+                	  <td><div align="center">1</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">1</div></td>
+                	  <td><div align="center">2</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">2</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">2</div></td>
+                	  <td><div align="center">4</div></td>
+                	  <td><div align="center">2</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">2</div></td>
+                	  <td><div align="center">4</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">3</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">3</div></td>
+                	  <td><div align="center">6</div></td>
+                	  <td><div align="center">3</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">3</div></td>
+                	  <td><div align="center">6</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">4</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">4</div></td>
+                	  <td><div align="center">8</div></td>
+                	  <td><div align="center">4</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">4</div></td>
+                	  <td><div align="center">8</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">5</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">5</div></td>
+                	  <td><div align="center">10</div></td>
+                	  <td><div align="center">5</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">5</div></td>
+                	  <td><div align="center">10</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">6</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">10</div></td>
+                	  <td><div align="center">20</div></td>
+                	  <td><div align="center">6</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">10</div></td>
+                	  <td><div align="center">20</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">7</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">30</div></td>
+                	  <td><div align="center">7</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">30</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">8</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">20</div></td>
+                	  <td><div align="center">40</div></td>
+                	  <td><div align="center">8</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">20</div></td>
+                	  <td><div align="center">40</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">9</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">25</div></td>
+                	  <td><div align="center">50</div></td>
+                	  <td><div align="center">9</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">25</div></td>
+                	  <td><div align="center">50</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">10</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">50</div></td>
+                	  <td><div align="center">100</div></td>
+                	  <td><div align="center">10</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">50</div></td>
+                	  <td><div align="center">100</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">11</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">75</div></td>
+                	  <td><div align="center">150</div></td>
+                	  <td><div align="center">11</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">75</div></td>
+                	  <td><div align="center">150</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">12</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">100</div></td>
+                	  <td><div align="center">200</div></td>
+                	  <td><div align="center">12</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">100</div></td>
+                	  <td><div align="center">200</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">13</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">200</div></td>
+                	  <td><div align="center">400</div></td>
+                	  <td><div align="center">13</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">200</div></td>
+                	  <td><div align="center">400</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">14</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">300</div></td>
+                	  <td><div align="center">600</div></td>
+                	  <td><div align="center">14</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">300</div></td>
+                	  <td><div align="center">600</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">400</div></td>
+                	  <td><div align="center">800</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">400</div></td>
+                	  <td><div align="center">800</div></td>
+               	  </tr>
+                	<tr>
+                	  <td><div align="center">16</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">500</div></td>
+                	  <td><div align="center">1000</div></td>
+                	  <td><div align="center">16</div></td>
+                	  <td><div align="center">15</div></td>
+                	  <td><div align="center">500</div></td>
+                	  <td><div align="center">1000</div></td>
+               	  </tr>
+                </table>
+          </div>
+       </div>
+	</div>
+</div>
+
+<script type="text/javascript" >
+
+	//
+	// You can hide the accordions on page load like this, it maintains accessibility
+	//
+	// Special thanks go out to Will Shaver @ http://primedigit.com/
+	//
+	var verticalAccordions = $$('.accordion_toggle');
+	verticalAccordions.each(function(accordion) {
+		$(accordion.next(0)).setStyle({
+		  height: '0px'
+		});
+	});
+
+
+</script>
+
+<script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
+<script type="text/javascript">_uacct = "UA-624845-2";urchinTracker();</script>
+</td></tr></table>
+
+</body>
+</html>

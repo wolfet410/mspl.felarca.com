@@ -1,0 +1,57 @@
+.payout
+{
+	width:130px;
+	border-width:0px;
+	font-size:36px;
+}
+
+.table
+{
+	width:50px;
+	border-width:0px;
+	font-size:20px;
+	text-align:center;
+}
+
+.dollar
+{
+	width:18px;
+	border-width:0px;
+	font-size:36px;
+}
+
+.newperson
+{
+	width:130px;
+}
+
+.class1
+{
+	background-color:#000000;
+	color:#FFFFFF;
+	width:150px;
+	font-size:18px;
+}
+
+.class2
+{
+	background-color:#FF0000;
+	color:#FFFFFF;
+	width:150px;
+	font-size:18px;
+}
+
+.class3
+{
+	background-color:#00FF00;
+	width:150px;
+	font-size:18px;
+}
+
+.class4
+{
+	background-color:#0033FF;
+	color:#FFFFFF;
+	width:150px;
+	font-size:18px;
+}

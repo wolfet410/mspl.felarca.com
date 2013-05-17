@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+function LaunchSignin()
+{
+	for(i=0; i<document.form1.gametype.length; i++)
+	{
+		if(document.form1.gametype[i].checked)
+		{
+			gametypeVal = document.form1.gametype[i].checked;
+			
+			if(gametypeVal != 'sevencardstud')
+			{
+				gametypeVal = 'others';
+			}
+			
+			for(j=0; j<document.form1.tourneytype.length; j++)
+			{
+				if(document.form1.tourneytype[j].checked)
+				{
+					signinVal = document.form1.tourneytype[j].value;
+				}
+			}
+
+		signinURL = 'signin/signin_' + signinVal + '_' + gametypeVal + '.html';
+		}
+	}		
+	signinWindow = window.open(signinURL,'signinWindow','fullscreen=yes');
+	document.getElementById('signinLaunch').disabled = true;
+	document.getElementById('allLaunch').disabled = true;
+	return true;
+}
+
+function LaunchTimer()
+{
+	for(i=0; i<document.form1.gametype.length; i++)
+	{
+		if(document.form1.gametype[i].checked)
+		{
+			timerURL = 'timer/timerstart_' + document.form1.gametype[i].value + '.html';
+		}
+	}		
+	timerWindow = window.open(timerURL,'timerWindow','fullscreen=yes');
+	document.getElementById('timerLaunch').disabled = true;
+	document.getElementById('allLaunch').disabled = true;
+	return true;
+}
+
+function LaunchTools()
+{
+	LaunchTimer();
+	LaunchSignin();
+	return true;
+}	
+</script>
+</head>
+
+<body>
+<img src="../images/logo.gif" width="400" height="220" align="left" />
+<form name='form1' onsubmit="LaunchTools();">
+  <p>Game Type:
+    <input type='radio' name='gametype' value="holdem" checked="checked">Hold'em
+      <input type='radio' name='gametype' value="pineapple">Crazy Pineapple
+      <input type='radio' name='gametype' value="omaha">Omaha
+      <input type='radio' name='gametype' value="sevencardstud">7-Card Stud  </p>
+  <p>Tournament Type:
+    <input type='radio' name='tourneytype' value="regular" checked="checked">Regular
+      <input type='radio' name='tourneytype' value="major">Major
+      <input type='radio' name='tourneytype' value="mainevent">Main Event  </p>
+	<input id='allLaunch' type="submit" value="Launch All Tools" />
+    <input id="signinLaunch" type="button" value="Launch Signin Only" onclick="LaunchSignin();" />
+    <input name="timerLaunch" type="button" value="Launch Timer Only" onclick="LaunchTimer();" />
+</form>
+</body>
+
+</html>

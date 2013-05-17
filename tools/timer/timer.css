@@ -1,0 +1,60 @@
+body {
+	background-image:url(images/gray%20back.png);
+}
+
+# html body{ overflow:hidden; }
+
+.round {
+	font-size: 100px;
+	font-family: "Rosewood Std Regular";
+	text-align: center;
+	color:#ffffff;
+	background-color:#cc3300;
+}
+
+.timer {
+	font-size: 234px;
+	font-family: "Rosewood Std Regular";
+	text-align: center;
+	color:#ffffff;
+	background-color:#cc3300;
+	border-width:10px;
+}
+
+.current {
+	font-size: 162px;
+	font-family: "Rosewood Std Regular";
+	text-align: center;
+	color:#ffffff;
+	background-color:#cc3300;
+	border-width:10px;
+}
+
+.next {
+	font-size: 72px;
+	font-family: "Rosewood Std Regular";
+	text-align: center;
+	color:#ffffff;
+	background-color:#cc3300;
+	border-width:10px;
+}
+
+h1 {
+	margin-bottom: 1px;
+	margin-top: 1px;
+	font-family:"Viner Hand ITC", "Times New Roman", Times, serif;
+	font-weight:bold;
+	font-size: 48px;
+	text-align: center;
+	color:#000000;
+}
+
+h2 {
+	margin-bottom: 1px;
+	margin-top: 1px;
+	font-family:"Viner Hand ITC", "Georgia", "Times New Roman", Times, serif;
+	font-size: 30px;
+	text-align: center;
+	color:#000000;
+}
+

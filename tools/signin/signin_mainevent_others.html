@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="signin_all.js"></script>
+<script type="text/javascript" src="signin_others.js"></script>
+<script type="text/javascript" src="signin_mainevent.js"></script>
+<link href="signin.css" type="text/css" rel="stylesheet" /></head>
+
+<body onload="Initialize();">
+<form name='form1'>
+  <h1 align="center">Main Event Tournament </h1>
+  <table border="1" align="center"><tr><td>
+  <table border="0" cellspacing="1" cellpadding="1" align="center">
+    <tr>
+      <td><div align="right">Total Money Collected:</div></td>
+      <td><input name="placePayouts217" type="text" class="dollar" id='placePayouts217' value="$" />
+          <input name="moneyCollected" type="text" class="payout" id='moneyCollected' />      </td>
+      <td>&nbsp;</td>
+      <td><div align="right">Total Place Payouts:</div></td>
+      <td><input name="placePayouts2" type="text" class="dollar" id='placePayouts2' value="$" />
+          <input name="placePayouts" type="text" class="payout" id='placePayouts' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">Total Bounty Payouts:</div></td>
+      <td><input name="placePayouts216" type="text" class="dollar" id='placePayouts216' value="$" />
+          <input name="bountyPayouts" type="text" class="payout" id='bountyPayouts' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center"><strong><u>Key</u></strong></div></td>
+      <td>&nbsp;</td>
+      <td><div align="center"></div></td>
+      <td><div align="center"># of Players</div></td>
+    </tr>
+    <tr>
+      <td><div align="right">League Contribution:</div></td>
+      <td><input name="placePayouts218" type="text" class="dollar" id='placePayouts218' value="$" />
+          <input name="leagueContribution" type="text" class="payout" id='leagueContribution' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">1st Place: </div></td>
+      <td><input name="placePayouts22" type="text" class="dollar" id='placePayouts22' value="$" />
+          <input name="firstPlace" type="text" class="payout" id='firstPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">1st Collected: </div></td>
+      <td><input name="placePayouts215" type="text" class="dollar" id='placePayouts215' value="$" />
+          <input name="firstBounty" type="text" class="payout" id='firstBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center">
+        <input name="button" type="button" class="class1" id="key1" value="Not In" />
+      </div></td>
+      <td>&nbsp;</td>
+      <td><div align="center">Table 1</div></td>
+      <td><div align="center">
+        <input name="table1" type="text" class="table" id='table1' />
+      </div></td>
+    </tr>
+    <tr>
+      <td><div align="right">Prize Fund:</div></td>
+      <td><input name="placePayouts219" type="text" class="dollar" id='placePayouts219' value="$" />
+          <input name="prizeFund" type="text" class="payout" id='prizeFund' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">2nd: </div></td>
+      <td><input name="placePayouts23" type="text" class="dollar" id='placePayouts23' value="$" />
+          <input name="secondPlace" type="text" class="payout" id='secondPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">2nd: </div></td>
+      <td><input name="placePayouts214" type="text" class="dollar" id='placePayouts214' value="$" />
+          <input name="secondBounty" type="text" class="payout" id='secondBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center">
+        <input name="button2" type="button" class="class2" id="key2" value="In - Not Paid" />
+      </div></td>
+      <td>&nbsp;</td>
+      <td><div align="center">Table 2</div></td>
+      <td><div align="center">
+        <input name="table2" type="text" class="table" id='table2' />
+      </div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><div align="right">3rd: </div></td>
+      <td><input name="placePayouts24" type="text" class="dollar" id='placePayouts24' value="$" />
+          <input name="thirdPlace" type="text" class="payout" id='thirdPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">3rd: </div></td>
+      <td><input name="placePayouts213" type="text" class="dollar" id='placePayouts213' value="$" />
+          <input name="thirdBounty" type="text" class="payout" id='thirdBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center">
+        <input name="button3" type="button" class="class3" id="key3" value="In - Paid" />
+      </div></td>
+      <td>&nbsp;</td>
+      <td><div align="center">Table 3</div></td>
+      <td><div align="center">
+        <input name="table3" type="text" class="table" id='table3' />
+      </div></td>
+    </tr>
+    <tr>
+      <td><div align="right"># of Entrants:</div></td>
+      <td><input name="entrants" type="text" class="payout" id='entrants' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">4th: </div></td>
+      <td><input name="placePayouts25" type="text" class="dollar" id='placePayouts25' value="$" />
+          <input name="fourthPlace" type="text" class="payout" id='fourthPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">4th: </div></td>
+      <td><input name="placePayouts212" type="text" class="dollar" id='placePayouts212' value="$" />
+          <input name="fourthBounty" type="text" class="payout" id='fourthBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center">
+        <input name="button4" type="button" class="class4" id="key4" value="KOed" />
+      </div></td>
+      <td>&nbsp;</td>
+      <td><div align="center">Table 4</div></td>
+      <td><div align="center">
+        <input name="table4" type="text" class="table" id='table4' />
+      </div></td>
+    </tr>
+    <tr>
+      <td><div align="right"># of Entrants That Owe:</div></td>
+      <td><input name="entrantsUnpaid" type="text" class="payout" id='entrantsUnpaid' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">5th: </div></td>
+      <td><input name="placePayouts26" type="text" class="dollar" id='placePayouts26' value="$" />
+          <input name="fifthPlace" type="text" class="payout" id='fifthPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">5th: </div></td>
+      <td><input name="placePayouts211" type="text" class="dollar" id='placePayouts211' value="$" />
+          <input name="fifthBounty" type="text" class="payout" id='fifthBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center"></div></td>
+      <td>&nbsp;</td>
+      <td><div align="center">Table 5</div></td>
+      <td><div align="center">
+        <input name="table5" type="text" class="table" id='table5' />
+      </div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><div align="right">6th: </div></td>
+      <td><input name="placePayouts27" type="text" class="dollar" id='placePayouts27' value="$" />
+          <input name="sixthPlace" type="text" class="payout" id='sixthPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">6th: </div></td>
+      <td><input name="placePayouts210" type="text" class="dollar" id='placePayouts210' value="$" />
+          <input name="sixthBounty" type="text" class="payout" id='sixthBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center"></div></td>
+      <td>&nbsp;</td>
+      <td><div align="center">Table 6</div></td>
+      <td><div align="center">
+        <input name="table6" type="text" class="table" id='table6' />
+      </div></td>
+    </tr>
+    <tr>
+      <td><div align="right"># Remaining in Tournament:</div></td>
+      <td><input name="entrantsRemaining" type="text" class="payout" id='entrantsRemaining' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">7th: </div></td>
+      <td><input name="placePayouts28" type="text" class="dollar" id='placePayouts28' value="$" />
+          <input name="seventhPlace" type="text" class="payout" id='seventhPlace' /></td>
+      <td>&nbsp;</td>
+      <td><div align="right">Special: </div></td>
+      <td><input name="placePayouts210" type="text" class="dollar" id='placePayouts210' value="$" />
+          <input name="specBounty" type="text" class="payout" id='specBounty' /></td>
+      <td>&nbsp;</td>
+      <td><div align="center"></div></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><div align="right">8th: </div></td>
+      <td><input name="placePayouts29" type="text" class="dollar" id='placePayouts29' value="$" />
+          <input name="eighthPlace" type="text" class="payout" id='eighthPlace' /></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><div align="center"></div></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  </td></tr></table>
+<p>Active Players</p>
+  <div align="center">
+  <script>
+	WritePlayers();
+  </script>
+  </div>
+  <table width="800" align="center">
+    
+    <tr align="center">
+      <td><input name="newPerson1" type="button" class="class1" id="newPerson1" onclick="NewPersonAdd('newPerson1');" value="" />
+      <br /><input type="text" class="newperson" id="newPerson1Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson2" type="button" class="class1" id="newPerson2" onclick="NewPersonAdd('newPerson2');" value="" />
+        <br />
+      <input name="text" type="text" class="newperson" id="newPerson2Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson3" type="button" class="class1" id="newPerson3" onclick="NewPersonAdd('newPerson3');" value="" />
+        <br />
+      <input name="text2" type="text" class="newperson" id="newPerson3Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson4" type="button" class="class1" id="newPerson4" onclick="NewPersonAdd('newPerson4');" value="" />
+        <br />
+      <input name="text3" type="text" class="newperson" id="newPerson4Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson5" type="button" class="class1" id="newPerson5" onclick="NewPersonAdd('newPerson5');" value="" />
+        <br />
+      <input name="text4" type="text" class="newperson" id="newPerson5Text" value="Enter Name Here" /></td>
+    </tr>
+    <tr align="center">
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr align="center">
+      <td><input name="newPerson6" type="button" class="class1" id="newPerson6" onclick="NewPersonAdd('newPerson6');" value="" />
+        <br />
+      <input name="text5" type="text" class="newperson" id="newPerson6Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson7" type="button" class="class1" id="newPerson7" onclick="NewPersonAdd('newPerson7');" value="" />
+        <br />
+      <input name="text6" type="text" class="newperson" id="newPerson7Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson8" type="button" class="class1" id="newPerson8" onclick="NewPersonAdd('newPerson8');" value="" />
+        <br />
+      <input name="text7" type="text" class="newperson" id="newPerson8Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson9" type="button" class="class1" id="newPerson9" onclick="NewPersonAdd('newPerson9');" value="" />
+        <br />
+      <input name="text8" type="text" class="newperson" id="newPerson9Text" value="Enter Name Here" /></td>
+      <td><input name="newPerson10" type="button" class="class1" id="newPerson10" onclick="NewPersonAdd('newPerson10');" value="" />
+        <br />
+      <input name="text9" type="text" class="newperson" id="newPerson10Text" value="Enter Name Here" /></td>
+    </tr>
+  </table>
+<p>"Retired" Players</p>
+  <div align="center">
+  <script>
+	WriteRetiredPlayers();
+  </script>
+  </div>
+</form>
+</body>
+</html>
+<!-- web81108.mail.mud.yahoo.com compressed/chunked Wed Sep 26 13:43:51 PDT 2007 -->

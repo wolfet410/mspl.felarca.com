@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+function LaunchSignin()
+{
+	for(i=0; i<document.form1.gametype.length; i++)
+	{
+		if(document.form1.gametype[i].checked)
+		{
+			gametypeVal = document.form1.gametype[i].value;
+			
+			if(gametypeVal != 'sevencardstud')
+			{
+				gametypeVal = 'others';
+			}
+			
+			for(j=0; j<document.form1.tourneytype.length; j++)
+			{
+				if(document.form1.tourneytype[j].checked)
+				{
+					signinVal = document.form1.tourneytype[j].value;
+				}
+			}
+		}
+	}		
+	signinURL = 'signin/signin_' + signinVal + '_' + gametypeVal + '.html';
+	signinWindow = window.open(signinURL,'signinWindow');
+	document.getElementById('signinLaunch').disabled = true;
+	document.getElementById('allLaunch').disabled = true;
+	return true;
+}
+
+function LaunchTimer()
+{
+	for(i=0; i<document.form1.gametype.length; i++)
+	{
+		if(document.form1.gametype[i].checked)
+		{
+			timerURL = 'timer/timerstart_' + document.form1.gametype[i].value + '.html';
+		}
+	}		
+	timerWindow = window.open(timerURL,'timerWindow');
+	document.getElementById('timerLaunch').disabled = true;
+	document.getElementById('allLaunch').disabled = true;
+	return true;
+}
+
+function LaunchTools()
+{
+	LaunchTimer();
+	LaunchSignin();
+	return true;
+}	
+</script>
+</head>
+
+<body>
+<img src="../images/logo.gif" width="557" height="305" align="left" />
+<form name='form1' onsubmit="LaunchTools();">
+  <p>Game Type:    </p>
+  <p>
+    <input type='radio' name='gametype' value="holdem" checked="checked">
+    Hold'em    </p>
+  <p>
+    <input type='radio' name='gametype' value="pineapple">
+    Crazy Pineapple    </p>
+  <p>
+    <input type='radio' name='gametype' value="omaha">
+    Omaha    </p>
+  <p>
+    <input type='radio' name='gametype' value="7cs">
+    7-Card Stud </p>
+  <p>
+    <input type='radio' name='gametype' value="hop" />
+  H.O.P.
+  </p>
+  </p>
+  <input type='radio' name='gametype' value="hops" />
+  H.O.P.S.
+  <p>
+    <input name="timerLaunch" type="button" value="Launch Timer" onclick="LaunchTimer();" />
+</p>
+</form>
+</body>
+
+</html>
