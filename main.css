@@ -11,12 +11,7 @@
   }
 }
 
-.ui-grid-a .ui-block-a {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.ui-grid-a .ui-block-b {
+.ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b, .side-padding {
   padding-left: 40px;
   padding-right: 40px;
 }

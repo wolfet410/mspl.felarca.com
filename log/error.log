@@ -1,0 +1,38 @@
+05-09-2013 21:32:26: test2
+05-28-2013 21:14:04: Could not get SQL data in buildScheduleTable
+05-28-2013 21:14:41: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:15:48: Could not get SQL data in buildScheduleTable
+05-28-2013 21:18:03: Could not get SQL data in buildScheduleTable
+05-28-2013 21:18:37: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:20:51: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:21:05: Could not get SQL data in buildScheduleTable1:
+05-28-2013 21:22:08: Could not get SQL data in buildScheduleTable:SELECT tournament.date, games.NAME AS game, event_type.NAME AS type FROM tournament INNER JOIN games ON tournament.game_id = games.GAMEID INNER JOIN event_type ON tournament.event_type = event_type.EVENTID WHERE season_id = 9 ORDER BY tournament.date;
+05-28-2013 21:27:11: Error connecting to MySQL server localhost, using mspl1: Access denied for user 'mspl1'@'localhost' (using password: YES)
+05-28-2013 21:28:13: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:28:40: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:28:48: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:29:21: 
+05-28-2013 21:29:21: Could not get SQL data in buildScheduleTable:
+05-28-2013 21:29:56: 
+05-28-2013 21:29:56: Could not get SQL data in buildScheduleTable
+05-28-2013 21:30:03: 
+05-28-2013 21:30:03: Could not get SQL data in buildScheduleTable
+05-28-2013 21:31:55: here
+05-28-2013 21:33:08: Could not get SQL data in buildScheduleTable
+05-30-2013 16:33:15: Frank Felarca
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
+05-30-2013 16:33:15: 
